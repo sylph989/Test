@@ -1,10 +1,18 @@
 import React from 'react';
-
+import {Formik, Field} from 'formik';
 const SelectionComponent = ({field, evalItem, ...props}) => (
     <div>
-        <h1>{JSON.stringify(field)}</h1>
-        
-    
+        <pre>{JSON.stringify(props)}</pre>
+        <div>
+            <label>{props.itemname}</label>
+            <select>
+            {
+                props.options.map((o)=>
+                    <option key={o.index}>{o.itemname}</option>
+                )
+            }
+            </select>
+        </div>
     </div>
 );
 

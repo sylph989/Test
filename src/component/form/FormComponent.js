@@ -31,17 +31,7 @@ const FormComponent = ({})=>(
                             props.values.map((item)=>(
                                 <div>
                                     <label>{item.evalItem.itemname}</label>
-                                    <Field name="evalItem"
-                                        render={({field}) => (
-                                            <select>
-                                            {
-                                                field.evalItem.options.map((o)=>
-                                                    <option key={o.index}>{o.itemname}</option>
-                                                )
-                                            }
-                                            </select>
-                                        )}>
-                                        
+                                    <Field {...item.evalItem} name="evalItem" component={SelectionComponent}>
                                     </Field>
                                 </div>
                             ))
